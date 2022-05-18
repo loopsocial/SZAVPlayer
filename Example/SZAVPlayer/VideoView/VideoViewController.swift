@@ -24,10 +24,11 @@ class VideoViewController: UIViewController {
     private lazy var videoOutputView1: UIImageView = createVideoOutputView()
     private lazy var videoOutputView2: UIImageView = createVideoOutputView()
     private let videos: [FakeVideo] = [
-        FakeVideo.fake4(),
+        FakeVideo.fake5(),
         FakeVideo.fake1(),
         FakeVideo.fake2(),
         FakeVideo.fake3(),
+        FakeVideo.fake4(),
     ]
     private var currentVideo: FakeVideo?
     private var isPaused: Bool = false
@@ -236,7 +237,7 @@ extension VideoViewController {
             videoPlayer.play()
         } else {
             videoPlayer.pause()
-            var config = SZAVPlayerConfig(urlStr: video.url, uniqueID: nil, isVideo: true, isVideoOutputEnabled: enableVideoOutput)
+            var config = SZAVPlayerConfig(url: video.url, uniqueID: nil, isVideo: true, isVideoOutputEnabled: enableVideoOutput)
             config.headersForContentInfoRequest = [
                 "header1": "111",
                 "header2": "222"

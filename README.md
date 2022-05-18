@@ -40,8 +40,8 @@ SZAVPlayer is a lightweight audio/video player library, based on `AVPlayer`, pur
 2. Setup player with url.
 
     ```swift
-    // uniqueID is to identify wether they are the same audio. If set to nil will use urlStr to create one.
-    let config = SZAVPlayerConfig(urlStr: audio.url, uniqueID: nil)
+    // uniqueID is to identify wether they are the same audio. If set to nil will use url to create one.
+    let config = SZAVPlayerConfig(url: audio.url, uniqueID: nil)
     audioPlayer.setupPlayer(config: config)
     ```
     
@@ -49,7 +49,7 @@ SZAVPlayer is a lightweight audio/video player library, based on `AVPlayer`, pur
     
     ```swift
     // If you want play video, pass an additional parameter `isVideo`.
-    let config = SZAVPlayerConfig(urlStr: video.url, uniqueID: nil, isVideo: true, isVideoOutputEnabled: true/false)
+    let config = SZAVPlayerConfig(url: video.url, uniqueID: nil, isVideo: true, isVideoOutputEnabled: true/false)
     videoPlayer.setupPlayer(config: config)
     ```
 
@@ -108,7 +108,7 @@ SZAVPlayer is a lightweight audio/video player library, based on `AVPlayer`, pur
     
     ```swift
     // or just use this function.
-    audioPlayer.replace(urlStr: audio.url, uniqueID: nil)
+    audioPlayer.replace(url: audio.url, uniqueID: nil)
     ```
     
     these two functions have the same effect.
@@ -118,7 +118,7 @@ SZAVPlayer is a lightweight audio/video player library, based on `AVPlayer`, pur
     - Set `isVideoOutputEnabled ` to `true`.
     
     ```swift
-    let config = SZAVPlayerConfig(urlStr: video.url, uniqueID: nil, isVideo: true, isVideoOutputEnabled: true)
+    let config = SZAVPlayerConfig(url: video.url, uniqueID: nil, isVideo: true, isVideoOutputEnabled: true)
     videoPlayer.setupPlayer(config: config)
     ```
     
@@ -158,7 +158,7 @@ SZAVPlayer is a lightweight audio/video player library, based on `AVPlayer`, pur
 9. Play local files. Because there is no need to go through the custom loading process for local files, directly set `disableCustomLoading` to `true`.
 
 	```swift
-	let config = SZAVPlayerConfig(urlStr: audio.url, uniqueID: nil)
+	let config = SZAVPlayerConfig(url: audio.url, uniqueID: nil)
 	config.disableCustomLoading = true
 	audioPlayer.setupPlayer(config: config)
 	```

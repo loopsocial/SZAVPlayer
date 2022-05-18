@@ -10,8 +10,8 @@ import AVKit
 
 public struct SZAVPlayerConfig {
 
-    public var urlStr: String           // The URL value for playing.
-    public var uniqueID: String?        // The uniqueID to identify wether they are the same audio. If set to nil will use urlStr to create one.
+    public var url: URL?                // The URL value for playing.
+    public var uniqueID: String?        // The uniqueID to identify wether they are the same audio. If set to nil will use url to create one.
     public var isVideo: Bool            // Is video or not.
     public var isVideoOutputEnabled: Bool           // Output video image function enabled or not.
     public var timeObserverInterval: Float64 = 1    // TimeObserver interval, default value is 1s.
@@ -24,15 +24,15 @@ public struct SZAVPlayerConfig {
     public var headersForContentInfoRequest: [String: String]?
     public var headersForDataRequest: [String: String]?
 
-    public init(urlStr: String, uniqueID: String?, isVideo: Bool = false, isVideoOutputEnabled: Bool = false) {
-        self.urlStr = urlStr
+    public init(url: URL?, uniqueID: String?, isVideo: Bool = false, isVideoOutputEnabled: Bool = false) {
+        self.url = url
         self.uniqueID = uniqueID
         self.isVideo = isVideo
         self.isVideoOutputEnabled = isVideoOutputEnabled
     }
 
     public static var `default`: SZAVPlayerConfig {
-        return SZAVPlayerConfig(urlStr: "fakeURL.com", uniqueID: nil)
+        return SZAVPlayerConfig(url: URL(string: "fakerURL.com"), uniqueID: nil)
     }
 
 }

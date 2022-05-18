@@ -100,7 +100,7 @@ public class SZAVPlayer: UIView {
     private(set) public var playerLayer: AVPlayerLayer?
     private(set) public var player: AVPlayer?
     private(set) public var playerItem: AVPlayerItem?
-    private(set) public var currentURLStr: String?
+    private(set) public var currentURL: URL?
     private(set) public var loadedTime: Float64 = 0
 
     private lazy var videoOutput: AVPlayerItemVideoOutput = createVideoOutput()
@@ -164,16 +164,21 @@ extension SZAVPlayer {
     /// - Parameters:
     ///   - config: The config to setup player properly.
     public func setupPlayer(config: SZAVPlayerConfig) {
-        guard let url = URL(string: config.urlStr) else { return }
+        guard let url = config.url else { return }
 
         if let _ = player, let oldAssetLoader = assetLoader {
             oldAssetLoader.cleanup()
             self.assetLoader = nil
         }
 
+        var config = config
+        if url.isFileURL {
+            config.disableCustomLoading = true
+        }
+
         self.config = config
         isReadyToPlay = false
-        currentURLStr = config.urlStr
+        currentURL = url
         let assetLoader = createAssetLoader(url: url, uniqueID: config.uniqueID, config: config)
         assetLoader.loadAsset(disableCustomLoading: config.disableCustomLoading) { (asset) in
             if let _ = self.player {
@@ -186,12 +191,12 @@ extension SZAVPlayer {
         self.assetLoader = assetLoader
     }
 
-    /// Replace playerItem with new urlStr and uniqueID.
+    /// Replace playerItem with new url and uniqueID.
     /// - Parameters:
-    ///   - urlStr: The URL value for playing.
-    ///   - uniqueID: The uniqueID to identify wether they are the same audio. If set to nil will use urlStr to create one.
-    public func replace(urlStr: String, uniqueID: String?) {
-        config.urlStr = urlStr
+    ///   - url: The URL value for playing.
+    ///   - uniqueID: The uniqueID to identify wether they are the same audio. If set to nil will use url to create one.
+    public func replace(url: URL, uniqueID: String?) {
+        config.url = url
         config.uniqueID = uniqueID
         setupPlayer(config: config)
     }

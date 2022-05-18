@@ -200,7 +200,7 @@ extension AudioViewController {
             audioPlayer.play()
         } else {
             audioPlayer.pause()
-            var config = SZAVPlayerConfig(urlStr: audio.url, uniqueID: nil)
+            var config = SZAVPlayerConfig(url: audio.url, uniqueID: nil)
             config.headersForContentInfoRequest = [
                 "header1": "111",
                 "header2": "222"

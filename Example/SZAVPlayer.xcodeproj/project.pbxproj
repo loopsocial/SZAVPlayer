@@ -24,6 +24,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9EFF551B090887608E60CFF2 /* Pods_SZAVPlayer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C566BC9C52044559FEA9D2DF /* Pods_SZAVPlayer_Tests.framework */; };
 		B5447281D246E3A7F96663E9 /* Pods_SZAVPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73051C260012CE14D8FA7AB8 /* Pods_SZAVPlayer_Example.framework */; };
+		CED49C762834C03B007C94E2 /* MHGU.mov in Resources */ = {isa = PBXBuildFile; fileRef = CED49C752834C03B007C94E2 /* MHGU.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A637AFA9C782353407A29449 /* Pods-SZAVPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZAVPlayer_Example.debug.xcconfig"; path = "Target Support Files/Pods-SZAVPlayer_Example/Pods-SZAVPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B2E49B9EF8345A5608067A78 /* Pods-SZAVPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZAVPlayer_Tests.release.xcconfig"; path = "Target Support Files/Pods-SZAVPlayer_Tests/Pods-SZAVPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C566BC9C52044559FEA9D2DF /* Pods_SZAVPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SZAVPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED49C752834C03B007C94E2 /* MHGU.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = MHGU.mov; sourceTree = "<group>"; };
 		DD1CD35766A8EABFF76C08C2 /* Pods-SZAVPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZAVPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-SZAVPlayer_Example/Pods-SZAVPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 		1735978223BDFCF800D3E232 /* VideoView */ = {
 			isa = PBXGroup;
 			children = (
+				CED49C742834C024007C94E2 /* Resource */,
 				1735978423BDFCF800D3E232 /* VideoViewController.swift */,
 				1735978323BDFCF800D3E232 /* FakeVideo.swift */,
 			);
@@ -199,6 +202,14 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		CED49C742834C024007C94E2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CED49C752834C03B007C94E2 /* MHGU.mov */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		E691C8732AAD827C103555A9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				CED49C762834C03B007C94E2 /* MHGU.mov in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
