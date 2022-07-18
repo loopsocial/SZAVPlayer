@@ -24,6 +24,7 @@ class VideoViewController: UIViewController {
     private lazy var videoOutputView1: UIImageView = createVideoOutputView()
     private lazy var videoOutputView2: UIImageView = createVideoOutputView()
     private let videos: [FakeVideo] = [
+        FakeVideo.fake6(),
         FakeVideo.fake5(),
         FakeVideo.fake1(),
         FakeVideo.fake2(),

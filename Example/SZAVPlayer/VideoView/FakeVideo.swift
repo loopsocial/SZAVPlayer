@@ -73,5 +73,12 @@ class FakeVideo: NSObject {
         return video
     }
 
+    static func fake6() -> FakeVideo {
+        let video = FakeVideo()
+        video.cover = ""
+        video.title = "M3U8"
+        video.url = URL(string: "https://cdn4.fireworktv.com/ivs/v1/067246364203/Kf5yN1lczbNT/2022/7/15/21/11/2lYVIDz4n8my/media/hls/master.m3u8")
+        return video
+    }
 }
 

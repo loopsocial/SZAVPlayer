@@ -156,6 +156,12 @@ public class SZAVPlayer: UIView {
 
 // MARK: - Actions
 
+extension URL {
+    func isHLS() -> Bool {
+        return pathExtension.lowercased() == "m3u8"
+    }
+}
+
 extension SZAVPlayer {
 
     // MARK: Public
@@ -172,7 +178,7 @@ extension SZAVPlayer {
         }
 
         var config = config
-        if url.isFileURL {
+        if url.isFileURL || url.isHLS() {
             config.disableCustomLoading = true
         }
 
