@@ -8,7 +8,7 @@ import UIKit
 import AVKit
 import CommonCrypto
 
-struct SZAVPlayerFileSystem {
+public struct SZAVPlayerFileSystem {
 
     static let documentsDirectory: URL = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -104,7 +104,7 @@ extension SZAVPlayerFileSystem {
 
 extension SZAVPlayerFileSystem {
 
-    static func uniqueID(url: URL) -> String {
+    public static func uniqueID(url: URL) -> String {
         return url.absoluteString.md5
     }
 

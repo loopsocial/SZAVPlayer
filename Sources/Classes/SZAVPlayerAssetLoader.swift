@@ -34,7 +34,7 @@ public class SZAVPlayerAssetLoader: NSObject {
     private var isCancelled: Bool = false
     private let config: SZAVPlayerConfig
 
-    init(url: URL, config: SZAVPlayerConfig) {
+    public init(url: URL, config: SZAVPlayerConfig) {
         self.url = url
         self.config = config
         super.init()
